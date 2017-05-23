@@ -8,31 +8,31 @@ namespace ConsoleApplication1
 {
     class robot
     {
-        public string Name { get; set; }
-        private int FullLevel { get; set; }
+        public string Name { get; set; }//机器人的名字属性
+        private int FullLevel { get; set; }//机器人的饥饿级别
 
 
-        public void Hello()
+        public void Hello()   // 打招呼方法
         {
-            Console.WriteLine("你好,我叫{0}",Name);
+            Console.WriteLine("你好,我叫{0}",Name);  
         }
 
-        public void Eat(int FoodCount)
+        public void Eat(int FoodCount)  //饥饿级别方法
         {
             if (FullLevel > 100)
             {
                 return;
             }
-            FullLevel = FullLevel + FoodCount;
+            FullLevel = FullLevel + FoodCount;//饥饿级别等于  饥饿级别+喂食数量
         }
-        public void Speak(string str)
+        public void Speak(string str)//对话方法
         {
-            if (FullLevel <=0 )
+            if (FullLevel <=0 )  //当饥饿级别小于或者等于0的时候,提示饿死了
             {
                 Console.WriteLine("我要死了");
                 return;
             }
-            if (str.Contains("名字") || str.Contains("姓名"))
+            if (str.Contains("名字") || str.Contains("姓名"))  //contains方法,如果有其中的字符串
             {
                 this.Hello();
             }
@@ -51,7 +51,7 @@ namespace ConsoleApplication1
             else {
                 Console.WriteLine("你真是个哈批");
             }
-            FullLevel--;
+            FullLevel--;//饥饿级别每次减1
         }
 
         public void Speak1(string str)
